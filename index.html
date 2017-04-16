@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,12 +8,24 @@
 	<body>
 		<div id="app" class="container">
 			<h1>{{ text }} - Vue Hero Part 1</h1>
+			<input type="text" v-model="text" />
+			<br>
+			<br>
+			<br>
+			<ul>
+				<li v-for="todo of todos">{{ todo.text }}</li>
+			</ul>
 		</div>
 		<script type="text/javascript">
 			new Vue({
 				el: "#app",
 				data: {
-					text: 'Hello World'
+					text: 'Hello World',
+					todos: [
+						{ id: 1, text: 'Pick Up Food'},
+						{ id: 2, text: 'Watch Film'},
+						{ id: 3, text: 'Learn Vue'},
+					]
 				}
 			})
 		</script>
